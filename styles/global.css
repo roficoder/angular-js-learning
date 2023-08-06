@@ -9,6 +9,7 @@
 
 :root {
   --main-color: rgb(11, 117, 92);
+  --disabled: rgba(11, 117, 92, 0.471);
 }
 
 body {
@@ -20,4 +21,9 @@ body {
 
 .main-area {
   padding: 1em;
+}
+
+.error {
+  font-size: 10px;
+  color: red;
 }

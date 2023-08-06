@@ -8,6 +8,7 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 1.5em;
   row-gap: 2em;
+  align-items: start;
 }
 
 .input-box {
@@ -45,5 +46,10 @@ h1 {
   border: none;
   background-color: var(--main-color);
   width: min(100%, 400px);
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+.my-form.ng-invalid button{
+  background-color: var(--disabled);
+  cursor: not-allowed !important;
 }

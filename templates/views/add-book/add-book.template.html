@@ -2,15 +2,23 @@
 
 <h1>Add Book</h1>
 
-<form ng-submit="addBook($event)">
+<form name="myForm" class="my-form" ng-submit="addBook($event)" novalidate>
   <div class="add-form">
+    <form-field label="Name" name="name" model="newBook.name" required="true"></form-field>
     <div class="input-box">
-      <label for="name">Name:</label>
-      <input type="text" id="name" ng-model="newBook.name" />
-    </div>
-    <div class="input-box">
-      <label for="name">Author:</label>
-      <input type="text" id="name" ng-model="newBook.author" />
+      <label for="author">Author:</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        ng-model="newBook.author"
+        ng-required="true"
+      />
+      <span
+        class="error"
+        ng-show="myForm.author.$error.required && myForm.author.$touched"
+        >Author name is required</span
+      >
     </div>
     <div class="input-box">
       <label for="count">Category:</label>
@@ -44,6 +52,13 @@
     </div>
   </div>
   <div class="btn">
-    <button type="submit">Submit</button>
+    <button
+      type="submit"
+      title="Fill form to submit"
+      ng-disabled="myForm.$invalid"
+      disabled="true"
+    >
+      Submit
+    </button>
   </div>
 </form>
