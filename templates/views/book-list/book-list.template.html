@@ -1,0 +1,36 @@
+<!-- <div ng-controller="listController"> -->
+<link rel="stylesheet" href="../../../styles/book_table.css"/>
+
+<h1>BOOK LIST</h1>
+<table class="book-table">
+  <thead>
+    <th>Sr.</th>
+    <th>Book Title</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Shelf</th>
+    <th>Issue Date</th>
+    <th>Lended</th>
+    <th>Remaining</th>
+    <th>Total</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="book in books">
+      <td>{{$index + 1}}</td>
+      <td>{{book.name}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.shelf}}</td>
+      <td>{{book.date | date}}</td>
+      <td>{{book.lended}}</td>
+      <td>{{book.remaining}}</td>
+      <td>{{book.lended + book.remaining}}</td>
+      <td class="action-btns">
+        <button><span class="material-symbols-outlined" > edit </span></button>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- </div> -->

@@ -1,0 +1,41 @@
+h1 {
+  margin-bottom: 0.5em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: thin solid var(--main-color);
+}
+
+thead th {
+  padding: 0.75em;
+  /* border: thin solid var(--main-color); */
+  text-align: start;
+}
+
+tbody tr td {
+  padding: 0.75em;
+  border: thin solid var(--main-color);
+}
+
+td.action-btns {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+td.action-btns button {
+  border-radius: 3px;
+  border: none;
+  padding: 0.25em;
+  color: white;
+  cursor: pointer;
+}
+
+td.action-btns button:first-child {
+  background-color: skyblue;
+}
+td.action-btns button:nth-child(2) {
+  background-color: rgba(212, 30, 30, 0.866);
+}

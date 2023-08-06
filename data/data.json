@@ -1,0 +1,15 @@
+{
+  "books": [
+    {
+      "name": "Raouf",
+      "author": "Robert",
+      "category": "Science",
+      "date":"12-02-2022",
+      "lended": 1,
+      "shelf": "2A",
+      "remaining": 4,
+      "id": 1
+    }
+
+  ]
+}

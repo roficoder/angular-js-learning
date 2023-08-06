@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../../../styles/add_book.css" />
+
+<h1>Add Book</h1>
+
+<form ng-submit="addBook($event)">
+  <div class="add-form">
+    <div class="input-box">
+      <label for="name">Name:</label>
+      <input type="text" id="name" ng-model="newBook.name" />
+    </div>
+    <div class="input-box">
+      <label for="name">Author:</label>
+      <input type="text" id="name" ng-model="newBook.author" />
+    </div>
+    <div class="input-box">
+      <label for="count">Category:</label>
+      <select name="" id="" ng-model="newBook.category">
+        <option value="">Select</option>
+        <option value="{{category}}" ng-repeat="category in categories">
+          {{category}}
+        </option>
+      </select>
+    </div>
+    <div class="input-box">
+      <label for="count">Shelf:</label>
+      <select name="" id="" ng-model="newBook.shelf">
+        <option value="">Select</option>
+        <option value="{{shelf}}" ng-repeat="shelf in shelves">
+          {{shelf}}
+        </option>
+      </select>
+    </div>
+    <div class="input-box">
+      <label for="count">Lended:</label>
+      <input type="number" id="count" ng-model="newBook.lended" />
+    </div>
+    <div class="input-box">
+      <label for="count">Remaining:</label>
+      <input type="number" id="count" ng-model="newBook.remaining" />
+    </div>
+    <div class="input-box">
+      <label for="count">Date:</label>
+      <input type="date" id="count" ng-model="newBook.date" />
+    </div>
+  </div>
+  <div class="btn">
+    <button type="submit">Submit</button>
+  </div>
+</form>
