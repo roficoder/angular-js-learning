@@ -9,8 +9,15 @@ angular.module("myApp").directive("formField", [
         label: "@",
         model: "=",
         required: "@",
-        name: "@"
+        name: "@",
+        form: '=',
+        select: '@',
+        options: '=',
+        type: '@'
       },
+      controller: function ($scope) {
+        $scope.select = $scope.select === 'true'
+      }
     };
   },
 ]);

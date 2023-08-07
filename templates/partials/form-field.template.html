@@ -1,10 +1,24 @@
 <div class="input-box">
-  <label>{{ label }}:</label>
-  <input type="text" ng-model="model" name="{{name}}" ng-required="required === 'true'" />
-  <!-- <span class="error" ng-show="myForm[name].$error.required && myForm[name].$touched">
-    {{ label }} is required
-  </span> -->
-  <span class="error" ng-show="myForm[name].$invalid && myForm[name].$touched">
+  <label>{{ label | titleCase}}:</label>
+
+  <!-- INPUT -->
+  <input ng-if="!select" type="{{type}}" ng-model="model" name="{{name}}" ng-required="required === 'true'" />
+  <!-- SELECT -->
+  <select ng-if="select" name="{{name}}" id="" ng-model="model" ng-required="required === 'true'">
+    <option value="">Select</option>
+    <option value="{{opt}}" ng-repeat="opt in options">
+      {{opt}}
+    </option>
+  </select>
+
+  <!--================== CORRECT SYNTAX ====================-->
+  <span class="error" ng-show="form[name].$error.required && form[name].$touched">
     {{ label }} is required
   </span>
+
+  <!--================== INCORRECT SYNTAX ====================-->
+  <!-- <span class="error" ng-show="{{form}}.{{name}}.$error.required && {{form}}.{{name}}.$touched">
+    {{ label }} is required
+  </span> -->
+
 </div>

@@ -4,52 +4,21 @@
 
 <form name="myForm" class="my-form" ng-submit="addBook($event)" novalidate>
   <div class="add-form">
-    <form-field label="Name" name="name" model="newBook.name" required="true"></form-field>
-    <div class="input-box">
-      <label for="author">Author:</label>
-      <input
-        type="text"
-        id="author"
-        name="author"
-        ng-model="newBook.author"
-        ng-required="true"
-      />
-      <span
-        class="error"
-        ng-show="myForm.author.$error.required && myForm.author.$touched"
-        >Author name is required</span
-      >
-    </div>
-    <div class="input-box">
-      <label for="count">Category:</label>
-      <select name="" id="" ng-model="newBook.category">
-        <option value="">Select</option>
-        <option value="{{category}}" ng-repeat="category in categories">
-          {{category}}
-        </option>
-      </select>
-    </div>
-    <div class="input-box">
-      <label for="count">Shelf:</label>
-      <select name="" id="" ng-model="newBook.shelf">
-        <option value="">Select</option>
-        <option value="{{shelf}}" ng-repeat="shelf in shelves">
-          {{shelf}}
-        </option>
-      </select>
-    </div>
-    <div class="input-box">
-      <label for="count">Lended:</label>
-      <input type="number" id="count" ng-model="newBook.lended" />
-    </div>
-    <div class="input-box">
-      <label for="count">Remaining:</label>
-      <input type="number" id="count" ng-model="newBook.remaining" />
-    </div>
-    <div class="input-box">
-      <label for="count">Date:</label>
-      <input type="date" id="count" ng-model="newBook.date" />
-    </div>
+
+    <form-field form="myForm" label="Name" type="text" name="name" model="newBook.name" required="true"></form-field>
+
+    <form-field form="myForm" label="Author" type="text" name="author" model="newBook.author" required="true"></form-field>
+
+    <form-field form="myForm" label="Category" name="category" model="newBook.category" required="true" select="true" options="categories"></form-field>
+
+    <form-field form="myForm" label="Shelf" name="shelf" model="newBook.shelf" required="true" select="true" options="shelves"></form-field>
+
+    <form-field form="myForm" label="lended" type="number" name="lended" model="newBook.lended" required="true"></form-field>
+
+    <form-field form="myForm" label="remaining" type="number" name="remaining" model="newBook.remaining" required="true"></form-field>
+    
+    <form-field form="myForm" label="date" type="date" name="date" model="newBook.date" required="true"></form-field>
+
   </div>
   <div class="btn">
     <button
